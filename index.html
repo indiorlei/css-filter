@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filters</title>
+
+	<style type="text/css">
+		h1 { text-align: center; }
+		li { display: inline; }
+		img {
+			width: 100%;
+			max-width: 100%;
+			transition: all .5s cubic-bezier(0.01, 0.54, 0.63, 0.71);
+		}
+		.none			{filter: none}
+		.blur 			{filter: blur(5px)}
+		.brightness 	{filter: brightness(20%)}
+		.contrast 		{filter: contrast(300%)}
+		.drop-shadow 	{filter: drop-shadow(30px 10px 4px grey)}
+		.grayscale 		{filter: grayscale(100%)}
+		.hue-rotate 	{filter: hue-rotate(100deg)}
+		.invert 		{filter: invert(100%)}
+		.opacity 		{filter: opacity(.5)}
+		.saturate 		{filter: saturate(4)}
+		.sepia 			{filter: sepia(100%)}
+	</style>
+
+	<script type="text/javascript">
+		function addClass(d) {
+			var el = document.getElementsByTagName("img");
+			var clas = d.getAttribute("data-filter");
+			for(var i = 0, all = el.length; i < all; i++){
+				el[i].removeAttribute("class");
+				el[i].classList.add(clas);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Filters</h1>
+	<ul>
+		<li><input type="button" value="none" data-filter="none" onclick="addClass(this);"></li>
+		<li><input type="button" value="blur" data-filter="blur" onclick="addClass(this);"></li>
+		<li><input type="button" value="brightness" data-filter="brightness" onclick="addClass(this);"></li>
+		<li><input type="button" value="contrast" data-filter="contrast" onclick="addClass(this);"></li>
+		<li><input type="button" value="drop-shadow" data-filter="drop-shadow" onclick="addClass(this);"></li>
+		<li><input type="button" value="grayscale" data-filter="grayscale" onclick="addClass(this);"></li>
+		<li><input type="button" value="hue-rotate" data-filter="hue-rotate" onclick="addClass(this);"></li>
+		<li><input type="button" value="invert" data-filter="invert" onclick="addClass(this);"></li>
+		<li><input type="button" value="opacity" data-filter="opacity" onclick="addClass(this);"></li>
+		<li><input type="button" value="saturate" data-filter="saturate" onclick="addClass(this);"></li>
+		<li><input type="button" value="sepia" data-filter="sepia" onclick="addClass(this);"></li>
+	</ul>
+	<img src="https://instagram.fpoa14-1.fna.fbcdn.net/vp/04d383eec47f01639b6249547104f88f/5BDBA4E5/t51.2885-15/sh0.08/e35/s640x640/23667832_143290389651278_4694672315663777792_n.jpg">
+
+</body>
+
+</html>
